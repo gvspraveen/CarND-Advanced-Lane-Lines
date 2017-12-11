@@ -46,7 +46,7 @@ def l_hls_threshold(img_rgb, thresh_min=0, thresh_max=255):
 
 def yellow_threshold(img_rgb):
     # Reference https://medium.com/@tjosh.owoyemi/finding-lane-lines-with-colour-thresholds-beb542e0d839
-    lower = np.array([225,180,0],dtype = "uint8")
+    lower = np.array([225,160,0],dtype = "uint8")
     upper = np.array([255, 255, 170],dtype = "uint8")
     mask = cv2.inRange(img_rgb, lower, upper)
 
@@ -55,7 +55,7 @@ def yellow_threshold(img_rgb):
     rgb_y = binary_image(rgb_y, 20, 255)
 
     hls = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2HLS)
-    hls_lower = np.array([20,120,80],dtype = "uint8")
+    hls_lower = np.array([20,90,80],dtype = "uint8")
     hls_upper = np.array([45, 200, 255],dtype = "uint8")
     mask = cv2.inRange(hls, hls_lower, hls_upper)
     hls_y = cv2.bitwise_and(img_rgb, img_rgb, mask = mask).astype(np.uint8)
@@ -69,7 +69,7 @@ def yellow_threshold(img_rgb):
 
 def white_threshold(img_rgb):
     # Reference https://medium.com/@tjosh.owoyemi/finding-lane-lines-with-colour-thresholds-beb542e0d839
-    lower = np.array([100,100,200],dtype = "uint8")
+    lower = np.array([120,120,200],dtype = "uint8")
     upper = np.array([255, 255, 255],dtype = "uint8")
     mask = cv2.inRange(img_rgb, lower, upper)
     rgb_w = cv2.bitwise_and(img_rgb, img_rgb, mask = mask).astype(np.uint8)
