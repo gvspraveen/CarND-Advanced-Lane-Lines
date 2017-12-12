@@ -266,7 +266,7 @@ Here is output
 
 Output video is uploaded to [project_video_out.mp4](./project_video_out.mp4).
 
-You can watch it in-line at [project_video_out.html](./project_video_out.html).
+You can watch on [Youtube](https://youtu.be/5YWIpEISx1o).
 
 ---
 
